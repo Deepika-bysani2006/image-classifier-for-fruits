@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scan Fruit Image</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Upload Fruit Image</h1>
+
+  <form id="uploadForm" enctype="multipart/form-data" method="POST" action="/classify">
+    <input type="file" name="image" accept="image/*" required />
+    <button type="submit">Classify</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    const form = document.getElementById('uploadForm');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      resultDiv.textContent = "Classifying...";
+      const formData = new FormData(form);
+      try {
+        const resp = await fetch('/classify', { method: 'POST', body: formData });
+        const data = await resp.json();
+        if(data.prediction) {
+          resultDiv.textContent = "Prediction: " + data.prediction;
+        } else {
+          resultDiv.textContent = "Error: " + (data.error || "Unknown error");
+        }
+      } catch(err) {
+        resultDiv.textContent = "Error during classification.";
+      }
+    });
+  </script>
+</body>
+</html>

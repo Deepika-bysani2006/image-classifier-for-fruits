@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6f0ff; /* light blue background */
+  color: #003366; /* dark blue text */
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  color: #004080; /* blue heading */
+  text-align: center;
+  margin-bottom: 30px;
+  text-decoration: underline;
+}
+.container{
+    background-color:white;
+  border: 3px solid #004080;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+nav {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+nav a {
+  color: #004080;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+form {
+  background-color: white;
+  border: 3px solid #004080;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #004080;
+  border-radius: 3px;
+  box-sizing: border-box;
+  text-decoration: underline;
+}
+
+button {
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 3px;
+  box-shadow: 0 0 10px #004080,0 0 10px cyan;
+  text-decoration: underline white;
+}
+
+button:hover {
+  background-color: #00264d;
+  box-shadow: 0 0 10px #004080,0 0 10px cyan;
+  text-decoration: underline white;
+}
+
+#result {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #004080;
+  text-align: center;
+}
